@@ -1,26 +1,26 @@
 [
     {
       "id": 1,
-      "name": "Creamsicle",
+      "name": "Batman",
       "price": 10.99,
-      "imgUrl": "/imgs/creamsicle.jpg"
+      "imgUrl": "/imgs/batman.jpeg"
     },
     {
       "id": 2,
-      "name": "Multipack",
+      "name": "Inspiration.jpg",
       "price": 1199,
-      "imgUrl": "/imgs/kitten_multipack.jpg"
+      "imgUrl": "/imgs/inspiration.jpg"
     },
     {
       "id": 3,
-      "name": "Stylish Model",
+      "name": "Karlak",
       "price": 14000,
-      "imgUrl": "/imgs/luxury_kitten.jpg"
+      "imgUrl": "/imgs/karlak.jpeg"
     },
     {
       "id": 4,
-      "name": "Extra Smol",
+      "name": "Not Like Us",
       "price": 1.05,
-      "imgUrl": "/imgs/TP_for_scale.jpg"
+      "imgUrl": "/imgs/notLikeUs.jpeg"
     }
   ]
