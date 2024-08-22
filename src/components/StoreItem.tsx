@@ -9,7 +9,7 @@ type StoreItemProps = {
 }
 
 export function StoreItem({id, name, price, imgUrl} : StoreItemProps) {
-    const quantity = 1
+    const quantity = 0
     return (
     <Card className="h-100">
         <Card.Img 
@@ -30,10 +30,10 @@ export function StoreItem({id, name, price, imgUrl} : StoreItemProps) {
                             <Button>-</Button>
                             <div>
                             <span className="fs-3">{quantity}</span> in cart 
-                            <Button>+</Button>
                             </div>
+                            <Button>+</Button>                            
                         </div>
-                        bye
+                        <Button variant="danger" size="sm">Remove</Button>
                     </div>
                 )}
             </div>
