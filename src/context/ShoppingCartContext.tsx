@@ -29,13 +29,14 @@ export function useShoppingCart(){
 
 //This is the radio station that broadcasts the context
 export function ShoppingCartProvider({children} : ShoppingCartProviderProps) {
-    const [cartItems, setCartItems] = useState<CartItem[]>([])
     const [isOpen, setIsOpen] = useState(false)
+    const [cartItems, setCartItems] = useState<CartItem[]>([])
+    
 
     const cartQuantity = cartItems.reduce((quantity, item) => item.quantity + quantity, 0)
 
     const openCart = () => setIsOpen(true)
-    const closeCart = () => closeCart(true) //5:11
+    const closeCart = () => setIsOpen(false) 
     
     function getItemQuantity(id: number) {
         return cartItems.find(item => item.id === id)?.quantity || 0
@@ -85,6 +86,8 @@ export function ShoppingCartProvider({children} : ShoppingCartProviderProps) {
             removeFromCart,
             cartItems,
             cartQuantity,
+            openCart,
+            closeCart,
             }}>
             {children}
         </ShoppingCartContext.Provider>
