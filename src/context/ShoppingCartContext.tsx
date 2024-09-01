@@ -1,5 +1,6 @@
 import { createContext, ReactNode, useContext, useState } from "react";
 import { ShoppingCart } from "../components/ShoppingCart";
+import { useLocalStorage } from "../hooks/useLocalStorage";
 
 type ShoppingCartProviderProps  = {
     children: ReactNode
@@ -30,18 +31,18 @@ export function useShoppingCart(){
 
 //This is the radio station that broadcasts the context
 export function ShoppingCartProvider({children} : ShoppingCartProviderProps) {
+    const [cartItems, setCartItems] = useLocalStorage<CartItem[]>("shopping-cart",[])
     const [isOpen, setIsOpen] = useState(false)
-    const [cartItems, setCartItems] = useState<CartItem[]>([])
-    
-
+  
     const cartQuantity = cartItems.reduce((quantity, item) => item.quantity + quantity, 0)
-
+  
     const openCart = () => setIsOpen(true)
-    const closeCart = () => setIsOpen(false) 
-    
+    const closeCart = () => setIsOpen(false)
+  
     function getItemQuantity(id: number) {
-        return cartItems.find(item => item.id === id)?.quantity || 0
+      return cartItems.find(item => item.id ===id)?.quantity || 0
     }
+
     function increaseCartQuantity(id: number) {
         setCartItems (currItems => {
             if(currItems.find(item => item.id === id) == null){
